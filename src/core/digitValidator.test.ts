@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createDigitValidator } from './digitValidator.js';
+import { createDigitValidator } from './digitValidator.ts';
 
 describe('createDigitValidator', () => {
   it('returns a function', () => {

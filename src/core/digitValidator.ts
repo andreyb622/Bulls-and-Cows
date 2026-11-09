@@ -1,4 +1,4 @@
-import type { Base } from './types.js';
+import type { Base } from './types.ts';
 
 export const createDigitValidator = (base: Base) => {
   const digitSymbols = Array.from({ length: base }, (_, value) => value.toString(base));

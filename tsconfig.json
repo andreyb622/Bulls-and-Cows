@@ -6,6 +6,7 @@
     "lib": ["ES2022", "DOM"],
     "rootDir": "src",
     "outDir": "dist",
+    "rewriteRelativeImportExtensions": true,
     "strict": true
   },
   "include": ["src/**/*"],
