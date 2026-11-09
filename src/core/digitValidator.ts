@@ -1,6 +1,13 @@
 import type { Base } from './types.js';
 
-export const createDigitValidator =
-  (_base: Base) =>
-  (_char: string): boolean =>
-    false;
+export const createDigitValidator = (base: Base) => {
+  const digitSymbols = Array.from({ length: base }, (_, value) => value.toString(base));
+  const allowedDigits = new Set(digitSymbols);
+
+  return (char: string): boolean => {
+    const isSingleChar = char.length === 1;
+    const isAllowedDigit = allowedDigits.has(char.toLowerCase());
+
+    return isSingleChar && isAllowedDigit;
+  };
+};
