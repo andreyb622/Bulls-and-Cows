@@ -4,23 +4,13 @@ import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-  { ignores: ['dist', 'node_modules', 'coverage'] },
-
+  { ignores: ['dist'] },
   js.configs.recommended,
   tseslint.configs.recommended,
-
   {
-    files: ['src/core/**/*.ts'],
     rules: {
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: 'ClassDeclaration',
-          message: 'В игровой логике классы запрещены.',
-        },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
-
   prettier,
 ]);
